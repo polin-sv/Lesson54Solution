@@ -7,7 +7,11 @@
 #include "logic.h"
 
 int recursion(int vector[], int size) {
-
+	if (size == 1) {
+		return vector[0] > 0 ? 1 : 0;
+	}
+	size--;
+	return recursion(vector, size) + (vector[size] > 0 ? 1 : 0);
 }
 
 int count_of_positive_elements(int vector[], int size) {
@@ -15,5 +19,5 @@ int count_of_positive_elements(int vector[], int size) {
 		return -1;
 	}
 
-	return 0;
+	return recursion(vector, size);
 }
