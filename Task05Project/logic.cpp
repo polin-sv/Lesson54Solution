@@ -5,8 +5,15 @@
 // которая подсчитывает количество цифр 
 // в заданном целом числе.
 
+
 #include "logic.h"
 
 int count(int number) {
-	return 0;
+
+	if (number <= 9 && number >= -9) {
+		return 1;
+	}
+
+	return 1 + count(number / 10);
+
 }
