@@ -6,6 +6,15 @@
 
 #include "logic.h"
 
+
 int sum(int number) {
-	return 0;
+	if (number <= 0) {
+		return -1;
+	}
+
+	if (number == 1) {
+		return 1;
+	}
+
+	return number + sum(number - 1);
 }
