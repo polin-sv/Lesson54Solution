@@ -4,8 +4,24 @@
 // Необходимо спроектировать и реализовать программу, 
 // которая вычисляет сумму чисел от N до M.
 
+
+
 #include "logic.h"
+int recursion(int n, int m) {
+	if (n == m) {
+		return n;
+	}
+
+	return m + recursion(n, m - 1);
+}
 
 int sum(int n, int m) {
-	return 0;
+
+	if (n > m) {
+		int t = n;
+		n = m;
+		m = t;
+	}
+
+	return recursion(n, m);
 }
