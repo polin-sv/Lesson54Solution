@@ -6,8 +6,17 @@
 // ряда Фибоначчи с другим началом, где первые два числа равны 1,
 // а каждое следующее – сумме двух предыдущих: 1, 1, 2, 3, 5, 8, 13, …
 
+
 #include "logic.h"
 
 int fibonacci(int index) {
-	return 0;
+	if (index <= 0) {
+		return index;
+	}
+
+	if (index <= 2) {
+		return 1;
+	}
+
+	return fibonacci(index - 1) + fibonacci(index - 2);
 }
