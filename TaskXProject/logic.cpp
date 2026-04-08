@@ -12,7 +12,18 @@
 // T6 = 1 + 2 + 3 + 4 + 5 + 6 = 21
 
 #include "logic.h"
+int recursion(int index) {
+	if (index == 1) {
+		return 1;
+	}
+
+	return index + recursion(index - 1);
+}
 
 int get_triangle_number(int index) {
-	return 0;
+	if (index <= 0) {
+		return index;
+	}
+
+	return recursion(index);
 }
