@@ -8,6 +8,16 @@
 
 #include "logic.h"
 
+
+
 int count_of_odd_digits(int number) {
-	return 0;
+	number = number < 0 ? -number : number;
+
+	if (number == 0) {
+		return 0;
+	}
+	int d1 = number % 10;
+	int count = d1 % 2 == 0 ? 0 : 1;
+
+	return count + count_of_odd_digits(number / 10);
 }
